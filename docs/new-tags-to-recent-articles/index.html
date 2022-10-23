@@ -1,0 +1,139 @@
+<!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style type="text/css">
+      body {
+        line-height: 2.0;
+      }
+      body,div,p,h1,h2,h3,h4,h5,h6 {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-10 offset-lg-1 d-flex align-items-center" style='min-height: 50vh;'>
+            <div>
+              <h4>Overview</h4>
+              <ul class='mt-2'>
+                <li>Javascriptで最新の記事にNewタグをつける</li>
+                <li>今日の日付から+-2日分の記事にNewタグをつけます</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-5 offset-lg-1">
+            <div>
+              <script>
+                today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                data = [
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()-7),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()-6),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()-5),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()-4),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()-3),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()-2),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()-1),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()+1),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()+2),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()+3),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()+4),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()+5),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()+6),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                {
+                  date: new Date(today.getFullYear(), today.getMonth(), today.getDate()+7),
+                  title: `Hello, World!`,
+                  content: `Today is sunny!`,
+                },
+                ];
+                for(i=0 ; i<data.length ; i++) {
+                  document.currentScript.parentNode.appendChild(el = document.createElement('div'));
+                  el.className = 'border-top border-dark py-3'
+                  el.appendChild(el = document.createElement('p'));
+                  el.textContent = `${data[i].date.getFullYear()}.${data[i].date.getMonth()+1}.${data[i].date.getDate()}`;
+                  diff = Math.abs((today - data[i].date)/86400000);
+                  if (diff < 3) {
+                    el.appendChild(el = document.createElement('span'));
+                    el.className = 'text-danger ms-2';
+                    el.textContent = `New`;
+                  }
+                  el.parentNode.appendChild(el = document.createElement('p'));
+                  el.innerHTML = `${data[i].title}`
+                }
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+  </html>
