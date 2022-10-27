@@ -14,3 +14,8 @@ git status
 ```
 git add . && git commit -m'' && git push origin HEAD
 ```
+
+
+```
+git reset --hard origin/click-and-copy/sato
+```
