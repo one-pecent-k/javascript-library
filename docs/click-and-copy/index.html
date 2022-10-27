@@ -42,11 +42,7 @@
 
               function addCount(){
                 n++;
-                if n%2==0 {
-                  text = '偶数です';
-                } else {
-                  text = '';
-                }
+                n%2==0 ? text = '偶数です' : text = '';
                 count.innerHTML = `${n}${text}`;
               }
 
